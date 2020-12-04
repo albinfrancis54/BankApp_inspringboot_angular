@@ -1,0 +1,29 @@
+<div class="content">
+    <div class="card-header">
+        <h3>ATM Simulator</h3>
+    </div>
+    <div class="container">
+        <div class="rows">
+        <div class="card mt-5 col-sm-4 offset-4">
+            <div class="card-header" style="padding: 2rem;">
+                <label for="amoutn"><b>Enter the Amount (INR):</b></label><br>
+                <input type="text"><br>
+                <label for="type" class="mt-2"><b>Type:</b></label>
+                <input type="radio" class="radio ml-4 mt-2" name="radio" value="Credit" id="credit"/>
+                <label for="credit"><b>Credit</b></label>
+                <input type="radio" class="radio ml-4 mt-2" name="radio" value="Debit" id="debit"/>
+                <label for="debit"><b>Debit</b></label>
+            </div>
+            
+            <div class="card-body" style="padding: 3rem;">
+                <p class="card-text"><b>PIN (4-digit):</b> </p>
+                <input type="password" name="pin"  id ="pin">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info" type="button" ><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-secondary" type="submit" >Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default " type="reset"  ><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>&nbsp;&nbsp;
+                
+            </div>
+</div>
+

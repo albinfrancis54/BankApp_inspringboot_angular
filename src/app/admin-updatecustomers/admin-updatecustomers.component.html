@@ -1,0 +1,140 @@
+<div class="content" >
+<ng-container *ngIf="val">
+
+
+    <div class="card-header">
+        <h3>Edit / View Customer details . . .</h3>
+    </div>
+<form class="offset-1"#form="ngForm" (ngSubmit)="onUpdate(form)">
+    <div class="form-row mt-4">
+        <div class="col-md-4" > 
+            <label><b>Customer ID: {{val.customerid}}</b></label><br>
+            <input type="hidden" name="customerid" id="customerid" class="form-textbox" #customerid="ngModel" ngModel required [(ngModel)]="val.customerid">
+        </div>
+    </div>
+    <div class="form-row mt-4">
+      <div class="col-md-4">
+        <label for="first"><b>First Name:</b></label><br>
+        <input type="text" class="form-textbox" name="first" #first="ngModel" ngModel required [(ngModel)]="val.first">
+        <div style="color: brown;" *ngIf="first.touched && first.value.length<2 ">enter the first name</div>
+      </div>
+      <div class="col-md-4">
+        <label for="first"><b>Last Name:</b></label><br>
+        <input type="text" class="form-textbox" name="last" id="last" #last="ngModel" ngModel required [(ngModel)]="val.last">
+        <div style="color: brown;" *ngIf="last.touched && last.value.length<2 ">enter the last name</div>
+      </div>
+      <div class="col-md-4">
+        <label for="phone"><b>Phone Number:</b></label><br>
+        <input type="text" class="form-textbox" id="phone" name="phone" #phone="ngModel" ngModel required [(ngModel)]="val.phone">
+        <div style="color: brown;" *ngIf="phone.touched && phone.value.length<2 ">enter the phone number</div>
+      </div>
+    </div>
+    
+    <div class="form-row mt-4">
+        <div class="col-md-4"> 
+            <label><b>Date of Birth:</b></label><br>
+            <input type="text" name="dob" id="dob" class="form-textbox" #dob="ngModel" ngModel required [(ngModel)]="val.dob">
+            <div style="color: brown;" *ngIf="dob.touched && (!dob.dirty||!dob.valid)">enter the dob</div>
+        </div>
+        <div class="col-md-4"> 
+            <label><b>Aadhar No:</b></label><br>
+            <input type="text" name="aadhar" id="aadhar" class="form-textbox"  #aadhar="ngModel" ngModel required [(ngModel)]="val.aadhar">
+            <div style="color: brown;" *ngIf="aadhar.touched && aadhar.value.length<2 ">enter the Aadhar Number</div>
+        </div>
+        <div class="col-md-4">
+            <label for="email"><b>Email-Id:</b></label><br>
+            <input type="email"  class="form-textbox" name="email" id="email" #email="ngModel" ngModel required [(ngModel)]="val.email">
+            <div style="color: brown;" *ngIf="email.touched && email.value.length<2 ">enter the Email</div>
+          </div>
+    </div>
+    <div class="form-row mt-4">
+        <div class="col-md-4"> 
+        <label><b>Gender: </b>{{val.gender}}</label> 
+        <!-- <input type="radio" class="radio ml-4" name="radio" value="male" id="male"/>
+        <label for="male"><b>Male</b></label>
+        <input type="radio" class="radio ml-4" name="radio" value="female" id="female" />
+        <label for="female"><b>Female</b></label> 
+        <input type="radio" class="radio ml-4" name="radio" value="others" id="others" />
+        <label for="others"><b>Others</b></label>  -->
+        <input type="hidden"  class="form-textbox" name="gender" id="gender" #gender="ngModel" ngModel required [(ngModel)]="val.gender">
+        </div> 
+    </div>
+    <div class="form-row mt-4">
+        <div class="col-md-4">
+            <label for="phone"><b>Address:</b></label><br> 
+            <textarea id="address" name="address" rows="2" class="form-textbox" cols="80" #address="ngModel" ngModel required [(ngModel)]="val.address"></textarea>
+            <div style="color: brown;" *ngIf="address.touched && address.value.length<2 ">enter the Address</div>
+        </div>
+    </div>
+    <div class="form-row mt-4">
+        <div class="col-md-4"> 
+            <label><b>Account No:</b></label><br>{{val.accountno}}
+            <input type="hidden" name="accountno" id="account" class="form-textbox" #accountno="ngModel" ngModel required [(ngModel)]="val.accountno" >
+            <div style="color: brown;" *ngIf="accountno.touched && accountno.value.length<2 ">enter the Account number</div>
+        </div>
+        <div class="col-md-4">
+            <label for="pin"><b>PIN (4 digit):</b></label><br>
+            <input type="text" class="form-textbox" name="pin" id="pin" #pin="ngModel" ngModel required [(ngModel)]="val.pin" >
+            <div style="color: brown;" *ngIf="pin.touched && pin.value.length<2 ">enter a pin with more than 2</div>
+            </div>
+        <div class="col-md-4 mt">
+            <label for="branch" class="mr-2"><b>Bank Branch: </b></label>
+            <select id="inputState" name="branch" class="form-textbox" #branch="ngModel" ngModel required [(ngModel)]="val.branch">
+                <option selected> Choose </option>
+                <option>kasargod</option>
+                <option>kannur</option>
+                <option>Bangalore</option>
+            </select>
+            <div style="color: brown;" *ngIf="branch.touched && (!branch.dirty||!branch.valid)">Select branch</div>
+        </div>
+    </div>
+    <div class="form-row mt-4">
+        <div class="col-md-4">
+            <label for="username"><b>Username:</b></label><br>
+            <input type="username" class="form-textbox" name="username" id="username" #username="ngModel" ngModel required [(ngModel)]="val.username">
+            <div style="color: brown;" *ngIf="username.touched && username.value.length<2 ">enter username</div>
+          </div>
+          <div class="col-md-4">
+            <label for="password"><b>Password:</b></label><br>
+            <input type="text" class="form-textbox" name="password" id="password" #password="ngModel" ngModel required [(ngModel)]="val.password">
+            <div style="color: brown;" *ngIf="password.touched && password.value.length<2 ">enter password</div>
+          </div>
+          <div class="col-md-4"> 
+            <label><b>Balance (INR): </b> {{val.balance}}</label><br>
+            <input type="hidden" name="balance" id="balance" class="form-textbox" #balance="ngModel" ngModel required [(ngModel)]="val.balance">
+        </div>
+    </div> 
+    <div class="form-row mt-5 mb-5">
+        <div class="col-md-8">
+            
+            <button type="button" class="btn btn-info"  (click)="goback()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+            <button type="submit" class="btn btn-secondary ml-5" [disabled]="form.invalid"> Update</button>
+            <button type="reset"   name="reset" class="btn btn-default ml-5"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+             
+        </div>
+    </div>  
+  </form>
+</ng-container>
+</div>
+<!-- data-toggle="modal" data-target="#modalSubscriptionForm" -->
+<!-- <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">{{message}}</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-success" data-dismiss="modal" data-target="#form">A Again</button>
+        </div> -->
+      <!-- </div>
+    </div>
+  </div>  -->
+
+
+
+
+
+  

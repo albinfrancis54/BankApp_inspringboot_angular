@@ -1,0 +1,68 @@
+<div class="content">
+    <div class="card-header">
+        <h3>My Account . . .</h3>
+    </div>
+    <ng-container *ngIf="val">
+    <div class="col-md-6 offset-3 mt-4 mb-5">
+        <div class="card profile-card-3">
+            <div class="background-block">
+                <img src="../../assets/background-customer.jpeg" alt="profile-sample1" class="background"/>
+            </div>
+            <div class="profile-thumb-block">
+                <img src="../../assets/account.png" alt="profile-image" class="profile"/>
+            </div>
+            <div class="card-content">
+                <div class="form-row mt-4">
+                    <div class="col-md-4">
+                      <label for="first"><p>First Name: {{val.first}}</p></label>
+                    </div>
+                    <div class="col-md-2"> 
+                    </div>
+                    <div class="col-md-4">
+                      <label for="first"><p>Last Name: {{val.last}}</p></label><br>
+                    </div>
+                  </div>
+                  <div class="form-row mt-4">
+                      <div class="col-md-4"> 
+                          <label><p>Balance (INR): {{val.balance}}</p></label><br>
+                      </div>
+                      <div class="col-md-1"> 
+                    </div>
+                      <div class="col-md-7">
+                        <label for="user"><p>User Name: {{val.username}}</p></label><br>
+                      </div>
+                  </div>
+                  <div class="form-row mt-4">
+                      <div class="col-md-4"> 
+                      <label><p>Gender: {{val.gender}}</p></label>
+                      </div> 
+                     <div class="col-md-2"> 
+                     </div>
+                      <div class="col-md-4"> 
+                          <label><p>Date of Birth:{{val.dob}}</p></label><br>
+                      </div>
+                  </div>
+                  <div class="form-row mt-4">
+                      <div class="col-md-4"> 
+                          <label><p>Aadhar No: {{val.aadhar}}</p></label><br>
+                      </div>
+                      <div class="col-md-2"> 
+                    </div>
+                      <div class="col-md-4">
+                        <label for="phone"><p>Phone: {{val.phone}}</p></label><br>
+                      </div>
+                  </div>
+                  <div class="form-row mt-4">
+                      
+                        <!-- <div class="col-md-4">
+                            <label for="email"><p>Email-Id:</p></label><br>
+                          </div> -->
+                  </div>
+                  <button class="btn btn-secondary mr-5" type="button" (click)="request()">Edit/Request</button> 
+            </div>
+           
+        </div>
+       
+    </div>
+</ng-container>
+</div>

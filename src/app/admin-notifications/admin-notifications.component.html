@@ -1,0 +1,43 @@
+<div class="content">
+    <nav class="navbar navbar-light">
+       <!-- <button type="button" class="btn btn-secondary offset-4" (click)="Add()">Add</button>&nbsp;&nbsp;&nbsp; -->
+       <!-- <form class="form-inline md-form mr-auto">
+        <input class="form-control" type="text" name="search" [(ngModel)]="search" placeholder="Search Beneficiaries" >
+        <!-- <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" >Search</button>  
+      </form> -->
+      
+      </nav>
+      
+      <table class="table table-striped col-md-10 offset-1 mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Customer Id</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Request</th>
+            <th scope="col">Details</th>
+            <th scope="col">Status</th>
+            <th scope="col">Accept</th>
+            <th scope="col">Reject</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let data of fetch">
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <!-- <td>{{fetch.customerid}}</td> -->
+            
+            <td>{{data.customerid}}</td>
+            <td>{{data.firstName}}</td>
+            <td >{{data.service}}</td>
+            <td>{{data.details}}</td>
+            <td>{{data.status}}</td>
+            <td><button type="submit" class="btn btn-info" (click)="Accept(data.grevieanceid)" >Approve</button></td>
+            <td><button type="submit" class="btn" (click)="decline(data.grevieanceid)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+            
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    
+</div>

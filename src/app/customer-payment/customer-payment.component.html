@@ -1,0 +1,73 @@
+<div class="content">
+  <ng-container *ngIf="fetch">
+    <div class="card-header">
+        <h3>Transfer Fund</h3>
+    </div>
+    <div class="card card-body col-sm-7 mt-5 offset-2">
+      
+    <form class="offset-1 mt-2" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-row">
+      <div class="col-md-4">
+        <label for="first"><b>To:</b></label><br>
+        <input type="text" class="form-textbox" name="beneficiaryname" #beneficiaryname="ngModel" ngModel required [(ngModel)]="fetch.firstName">
+        <div style="color: brown;" *ngIf="beneficiaryname.touched && beneficiaryname.value.length<2">enter the beneficiaryname</div>
+      </div>
+    </div>
+      <div class="form-row mt-4">
+        <div class="col-md-4"> 
+            <label><b>Account No:</b></label><br>
+            <input type="text" id="accountNo" class="form-textbox" name="accountNo" #accountNo="ngModel" ngModel required [(ngModel)]="fetch.accountNo">
+            <div style="color: brown;" *ngIf="accountNo.touched && accountNo.value.length<2">enter Account No</div>
+        </div>
+    </div>
+    <div class="form-row mt-4">
+        <div class="col-md-4">
+            <label for="email"><b>Enter Amount (INR):</b></label><br>
+            <input type="text" class="form-textbox" name="debit" #debit="ngModel" ngModel required>
+            <div style="color: brown;" *ngIf="debit.touched && debit.value.length<2">enter Amount</div>
+          </div>
+    </div>     
+    <div class="form-row mt-4">
+        <div class="col-md-4">
+            <label for="phone"><b>Enter Password:</b></label><br>
+            <input type="text"  class="form-textbox" name="password" #password="ngModel" ngModel required>
+            <div style="color: brown;" *ngIf="password.touched && password.value.length<2">enter password</div>
+          </div>
+          <div class="col-md-4">
+            <label for="phone"><b>Enter Remarks:</b></label><br>
+            <input type="text" class="form-textbox" name="remarks" #remarks="ngModel" ngModel required>
+            <div style="color: brown;" *ngIf="remarks.touched && remarks.value.length<2">enter remarks</div>
+          </div>
+    </div>
+  
+    <div class="form-row mt-5 mb-3">
+        <div class="col-md-8">
+            <button type="button"  class="btn btn-info" (click)="goback()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+            <button type="submit"  class="btn btn-success ml-5" data-toggle="modal" data-target="#modalSubscriptionForm"> Submit</button>
+           <button type="reset"  class="btn btn-default ml-5"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+
+           
+        </div>
+    </div> 
+</form> 
+</div> 
+</ng-container> 
+</div>
+
+
+<div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">{{message}}</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-info" data-dismiss="modal" (click)="goback()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back</button>
+        </div>
+      </div>
+    </div>
+  
+  </div>

@@ -1,0 +1,30 @@
+.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    font-family: "Lato", sans-serif;
+    background-image: url("../../assets/news.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 0px;
+    height: 700px;
+    overflow-x: hidden;
+    
+  }
+#form-textbox,.form-control {
+
+  background: transparent ;
+  outline-style: none ;
+  border-top: none ;
+  border-left: none ;
+  border-right: none ;
+  border-bottom: solid #000000 1px;
+  box-shadow: 0 0 0;
+  }
+
+#details{
+    outline-color: mediumslateblue;
+}
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

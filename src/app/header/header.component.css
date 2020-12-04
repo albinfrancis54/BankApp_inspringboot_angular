@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background: transparent;
+    /* margin: 0;
+    padding: 0;
+    background-image: url('../../assets/backlogin.jpg');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    /* overflow-x: hidden; */
+    /* margin-bottom: 200px; */
+    /* max-width: 100px; */
+    overflow-x: hidden;
+  
+
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color:lightsteelblue;
+    position: fixed;
+    height: 1100px;
+    overflow: auto;
+  } 
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color:#555;
+    color: white;
+    
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+    display: block;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar,.block{
+      width: 100%;
+      height: auto; 
+      position: fixed;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  } 
+  
+  
+  
+  
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: greenyellow;
+  }
+  
+  /* Main content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+
+  .active {
+    background-color: green;
+    color: white;
+  }
+  
+ 
+  .dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+  }
+  
+
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+
+
+
+
+  /*  */
+
+  footer {
+    background: #16222A;
+    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+    background: linear-gradient(59deg, #3A6073, #16222A);
+    color: white;
+    height: 240px;
+    bottom: -190px;
+    position: absolute;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: -10px;
+    overflow: hidden;
+  }
+  
+  footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+  }
+  
+  footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+  }
+  
+  .copy {
+    font-size: 12px;
+    padding: 10px;
+    border-top: 1px solid #FFFFFF;
+  }
+  
+  .footer-middle {
+    padding-top: 1em;
+    color: white;
+  }
+  
+  
+  /*SOCİAL İCONS*/
+  
+  /* footer social icons */
+  
+  ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+  }
+  
+  ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+  }
+  
+  
+  /* footer social icons */
+  
+  .social-network a.icoFacebook:hover {
+    background-color: #3B5998;
+  }
+  .fa.fa-user-circle:hover{
+    color: #3B5998;
+  }
+  .social-network a.icoLinkedin:hover {
+    background-color: #007bb7;
+  }
+  
+  .social-network a.icoFacebook:hover i,
+  .social-network a.icoLinkedin:hover i {
+    color: #fff;
+  }
+  
+  .social-network a.socialIcon:hover,
+  .socialHoverClass {
+    color: #44BCDD;
+  }
+  
+  .social-circle li a {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+  
+  .social-circle li i {
+    margin: 0;
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .social-circle li a:hover i,
+  .triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  
+  .social-circle i {
+    color: #595959;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  .social-network a {
+    background-color: #F9F9F9;
+  }
+  
+  
+
+
+
+
+
+     .navbar .nav-item .dropdown-menu{  
+      display:block;
+      background-color: rgb(145, 135, 145); 
+      opacity: 0; 
+      visibility: hidden; 
+      transition:.3s; 
+      margin-top:0;
+      overflow: hidden;
+      }
+    .navbar .nav-item:hover .nav-link{ 
+      color: white; 
+     }
+    .navbar .dropdown-menu.fade-down{ 
+      top:80%; 
+      transform: rotateX(-75deg); 
+      transform-origin: 0% 0%;
+     }
+    .navbar .dropdown-menu.fade-up{ 
+      top:180%; 
+     }
+    .navbar .nav-item:hover .dropdown-menu{ 
+      transition: .3s;
+       opacity:1; 
+       visibility:visible; 
+       top:100%; 
+       transform: rotateX(0deg);
+       }
+
+.fa.fa-user-circle{
+  width: 50px;
+  size: 40px;
+  height: 30px;
+}

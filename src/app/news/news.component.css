@@ -1,0 +1,12 @@
+.content{
+    /* margin-left: 200px; */
+    padding: 1px 16px;
+    font-family: "Lato", sans-serif;
+    background-image: url("../../assets/newsb.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* margin-bottom: 100px; */
+    height: 650px; 
+    position: relative
+}

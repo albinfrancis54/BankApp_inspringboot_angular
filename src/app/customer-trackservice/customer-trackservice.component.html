@@ -1,0 +1,35 @@
+
+<div class="content">
+    <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <form class="form-inline md-form  offset-5">
+       <input class="form-control" type="text" name="search" [(ngModel)]="search" placeholder="Search Transaction" >
+       <!-- <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" >Search</button>  
+     </form>
+     </nav> -->
+     <div class="card-header">
+      <h3>Track Requests</h3>
+  </div>
+     
+      <table class="table table-striped col-md-8 offset-2 mt-5">
+        <ng-container *ngFor="let data of fetch">
+          <thead>
+            <tr>
+              <th scope="col">Requested For</th>
+              <th scope="col">Details</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>{{data.service}} </td>
+              <td>{{data.details}}</td>
+              <td>{{data.status}}</td>
+            </tr>
+          
+          </tbody>
+        </ng-container>
+        </table>
+     
+  </div>
+  

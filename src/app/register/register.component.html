@@ -1,0 +1,37 @@
+<div class="content">
+    <div class="card-header">
+        <h3>Add New Admin...</h3>
+    </div>
+    <div class="pt-5">
+        <!-- <div style="height: 70px;">
+            <div *ngIf='!flag && isSubmited' class="alert alert-danger col-md-4 offset-md-4">
+                Credentials Invalid
+            </div>
+        </div> -->
+      </div>
+      <div class="col-md-4 offset-md-4">
+          <div class="card">
+              <form [formGroup]='registerForm' (ngSubmit)='register(registerForm)'>
+                  <div class="card-body">
+                      <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input type="email" class="form-control" name="email" id="email" formControlName='email'>
+                          <div style="color: brown;" *ngIf="registerForm.get('email').touched && registerForm.get('email').value.length<4 ">enter the email with more than 4 charaters</div>
+                      </div>
+                      <div class="form-group">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" name="password" id="password" formControlName='password'>
+                          <div style="color: brown;" *ngIf="registerForm.get('password').touched && registerForm.get('password').value.length<4 ">enter the password with more than 4 charaters</div>
+                      </div>
+                      <div class="form-group">
+                        <label for="role"></label>
+                        <input type="hidden" class="form-control" name="roles" id="roles" value="user" formControlName='roles'>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <button type="submit" class="btn btn-outline-info offset-md-5"[disabled]="registerForm.invalid">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+    </div>

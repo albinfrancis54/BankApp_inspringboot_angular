@@ -1,0 +1,29 @@
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  input {
+
+    background: transparent ;
+    outline-style: none ;
+    border-top: hidden ;
+    border-left: none ;
+    border-right: none ;
+    border-bottom: solid #000000 2px;
+    box-shadow: 0 0 0;
+    /* background-color: white; */
+    }
+.content{
+  margin-left: 200px;
+  padding: 1px 16px;
+    font-family: "Lato", sans-serif;
+    background-image: url("../../assets/manage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* margin-bottom: 100px; */
+    height: 650px; 
+    position: relative;
+}
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+}

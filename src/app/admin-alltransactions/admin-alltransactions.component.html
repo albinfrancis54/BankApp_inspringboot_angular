@@ -1,0 +1,48 @@
+<div class="content">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+       <form class="form-inline md-form offset-5">
+        <input class="form-control" type="text" name="search" [(ngModel)]="search" placeholder="Search By Date" >
+        <!-- <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" >Search</button>  -->
+      </form>
+      </nav>
+    <table class="table table-striped col-md-9 offset-2 mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Customer.ID</th>
+            <th scope="col">Trans.ID</th>
+            <th scope="col">SenderName</th>
+            <th scope="col">Beneficiary</th>
+            <th scope="col">Date And Time (IST)</th>
+            <th scope="col">Remarks</th>
+            <th scope="col">Amount (INR)</th>
+            <!-- <th scope="col">Credit (INR)</th> -->
+
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let data of result|adminTransation:search">
+          <tr>
+            <td>{{data.customerid}}</td>
+            <td>{{data.transactionid}}</td>
+            <td>{{data.senderName}}</td>
+            <td>{{data.beneficiaryname}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.remarks}}</td>
+            <td>{{data.debit}}</td>
+          </tr>
+          <!-- <tr>
+            <td>{{data.customerid}}</td>
+            <td>{{data.transactionid}}</td>
+            <td>{{data.beneficiaryname}}</td>
+            <td>{{data.senderName}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.remarks}}</td>
+            
+            <td>{{data.credit}}</td>
+            <td>{{data.debit}}</td>
+          </tr> -->
+        </ng-container>
+        </tbody>
+        
+      </table>
+</div>

@@ -1,0 +1,150 @@
+<!-- <div class="container-fluid"> -->
+<div class="content sticky-top ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " >
+    <a class="navbar-brand"><img src="../../assets/logobank.jpg" width="60" height="50"> WORLD BANK </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="main_nav">
+        
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="about">About</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Our services  </a>
+            <ul class="dropdown-menu fade-up">
+            <li><a class="dropdown-item" routerLink="news"> Notice corner</a></li>
+            <li><a class="dropdown-item" href="https://www.sbiyono.sbi/wps/portal/accountopening/digital-account#!/aoCustomerOpenOVD"> open Account </a></li>
+            <li><a class="dropdown-item" href="https://www.google.com/search?q=atms+near+by&oq=atms+near+by&aqs=chrome..69i57.5099j0j7&sourceid=chrome&ie=UTF-8"> Atms near by </a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="register"*ngIf='isAdmin()&&isLogedad()'>Register</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="navbar nav mr-5" >
+     <div><a class="nav-link" style="text-decoration: none;" routerLink="login" *ngIf= '(!(isUser() && isLogedcs())&&!(isAdmin()&&isLogedad()))'><i class="fa fa-user-circle fa-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
+      <div  *ngIf='!(!(isUser() && isLogedcs())&&!(isAdmin()&&isLogedad()))' > 
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user-circle fa-2x"></i></a>
+        <ul class="dropdown-menu fade-up">
+        <li><a class="nav-item nav-link" routerLink="cumyprofile" *ngIf='isUser() && isLogedcs()'><i class="fa fa-address-card"></i> My Profile</a></li>
+        <li><a class="nav-item nav-link"><i class="fa fa-cog"></i> Settings</a></li>
+        <li><div (click)="logout()"><a class="nav-item nav-link" ><i class="fa fa-sign-out"></i> Logout</a></div></li>
+        </ul>
+        </li>
+      </div>
+
+  </div>
+  </nav>
+</div>
+
+<!-- admin -->
+  <div class="sidebar" *ngIf='isAdmin()&&isLogedad()'>
+    
+    <a  class="active" routerLink="adminhome"><i class="fa fa-home "></i> Home</a>
+    <!-- <a  routerLink="" class="block"style="border-style: ridge; border-right: none; border-left: none;">My Customers</a> -->
+    <a  routerLink="alltransactions" ><i class="fa fa-money" aria-hidden="true"></i> Transactions</a>
+    <a  routerLink="notification" *ngIf='isAdmin()&&isLogedad()'><i class="fa fa-bell"></i> Notifications</a>
+    <a  routerLink="addcus"><i class="fa fa-user-plus"></i> Add Customer</a>
+    <a  routerLink="managecus"><i class="fa fa-users"></i> Manage Customer</a>
+    <!-- <button  data-toggle="collapse" aria-expanded=" " class="dropdown-toggle" ref="#data">Dropdown</button>
+      <ul class=" collapse dropdown-container" id="data">
+       <li> <a href="#">Link 1</a></li>
+       <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul> -->
+     <!-- <a  routerLink="website"  class="block" style="border-style: ridge; border-right: none; border-left: none;" >Website Management</a> -->
+    <a  routerLink="adminnews" ><i class="fa fa-plus"></i> Post News</a>
+
+</div> 
+
+
+<!-- sidebar customer -->
+
+<div class="sidebar" *ngIf='isUser() && isLogedcs()'>
+    <a  class="active" routerLink="cushome"><i class="fa fa-home "></i>  Home</a>
+    <a  routerLink="cutrans" class="block"><i class="fa fa-exchange"></i>  My Transactions</a>
+    <!-- <a  routerLink="" style="border-style: ridge; border-right: none; border-left: none;"><b>Send / Recieve</b></a> -->
+    <a  routerLink="cutrfunds" ><i class="fa fa-money" aria-hidden="true"></i>  Transfer Funds</a>
+    <!-- <button  data-toggle="collapse" aria-expanded=" " class="dropdown-toggle" ref="#data">Dropdown</button>
+      <ul class=" collapse dropdown-container" id="data">
+       <li> <a href="#">Link 1</a></li>
+       <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul> -->
+     <!-- <a  routerLink="cuatm"  class="block" >Atm Simulator</a> -->
+     <a  routerLink="changepassword"  class="block" ><i class="fa fa-unlock-alt"></i> Change Password</a>
+     <a  routerLink="track" class="block"><i class="fa fa-tasks"></i> Track Griveance</a>
+    <!-- <a  routerLink="" style="border-style: ridge; border-right: none; border-left: none;"><b>Submit Griveance</b></a> -->
+     <a  routerLink="cucontactus"><i class="fa fa-question-circle"></i> Contact us</a>
+
+
+</div> 
+
+
+
+
+
+
+  <router-outlet></router-outlet>
+
+<br>
+  <!-- footer -->
+  <footer class="mainfooter" role="contentinfo" *ngIf= '(!(isUser() && isLogedcs())&&!(isAdmin()&&isLogedad()))'>
+    <div class="footer-middle">
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-3">
+          <!--Column1-->
+          <div class="footer-pad">
+            <h4>Contact us</h4>
+            <ul class="list-unstyled">
+              <li><a href="#"></a></li>
+              <li><a href="#">315, 100 Feet Rd,</a></li>
+              <li><a href="#">Indira Nagar 1st Stage,</a></li>
+              <li><a href="#">Hoysala Nagar,</a></li>
+              <li><a href="#">Indiranagar,</a></li>
+              <li><a href="#">Bengaluru</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <!--Column2-->
+          <div class="footer-pad">
+            <h4>Our Branches</h4>
+            <ul class="list-unstyled">
+              <li><a href="#"></a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Kerala</a></li>
+              <li><a href="#">Bangalore</a></li>
+            </ul>
+          </div>
+        </div>
+          <div class="col-sm-3">
+              <h4>Follow Us</h4>
+              <ul class="social-network social-circle">
+               <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+              </ul>				
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 copy">
+              <p class="text-center">All rights reserved.</p>
+          </div>
+      </div>
+  
+  
+    </div>
+    </div>
+  </footer>
+<!-- </div> -->

@@ -1,0 +1,28 @@
+<div class="content">
+    <form class="form-inline md-form offset-5 mb-4 mt-5">
+      <input class="form-control mr-md-2" type="text" name="search" [(ngModel)]="search" placeholder="Search Accounts" >
+      <!-- <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" >Search</button>  -->
+    </form>
+    <div *ngFor="let value of data | filter:search">
+    <div class="flip-card  offset-1 float-left mt-3">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="../../assets/account.png" alt="Avatar" style="width:200px;height:200px;">
+        </div>
+        <div class="flip-card-back">
+          <!-- <img src=""> -->
+          <div class="card-body" style="padding: 2rem;">
+          <p class="card-text">Account Holder:<br>  &nbsp;{{value.first}} {{value.last}} </p> <br>
+          <p class="card-text">Account Number:<br> {{value.accountno}} </p>
+          <div class="card-footer">
+            <button class="btn btn-secondary mr-2" (click)="update(value)">View/Edit</button>
+            <button type="button" class="btn" (click)="Delete(value.customerid)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+

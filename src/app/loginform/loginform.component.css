@@ -1,0 +1,31 @@
+.content{
+    
+    padding: 1px 16px;
+    font-family: "Lato", sans-serif;
+    /* margin-bottom: 300px; */
+    background-image: url("../../assets/backlogin.jpg");
+    /* background-position: ; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1495px;
+    height: 600px;
+    overflow-x: hidden;
+
+}
+/* .card{
+    background: transparent;
+} */
+
+input {
+
+    background: transparent ;
+    outline-style: none ;
+    border-top: none ;
+    border-left: none ;
+    border-right: none ;
+    border-bottom: solid #000000 1px;
+    box-shadow: 0 0 0;
+    }
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}    

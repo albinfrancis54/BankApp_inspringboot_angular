@@ -1,0 +1,62 @@
+<div class="content">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <form class="form-inline md-form  offset-5">
+     <input class="form-control" type="text" name="search" [(ngModel)]="search" placeholder="Search Transaction" >
+   </form>
+   </nav>
+   <div class="card-header">
+    <h3 class="offset-5">Debit</h3>
+</div>
+    <table class="table table-striped col-md-8 offset-2 mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Trans.ID</th>
+            <th scope="col">Beneficiary Name</th>
+            <th scope="col">Date And Time (IST)</th>
+            <th scope="col">Remarks</th>
+            <th scope="col">Debit (INR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let data of result | sort:search">
+          <tr>
+            <td>{{data.transactionid}}</td>
+            <td>{{data.beneficiaryname}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.remarks}}</td>
+            <td>{{data.debit}}</td>
+          
+          </tr>
+        </ng-container>
+        </tbody>
+        
+      </table>
+      <div class="card-header">
+        <h3 class="offset-5">Credit</h3>
+    </div>
+      <table class="table table-striped col-md-8 offset-2 mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Trans.ID</th>
+            <th scope="col">Sender.ID</th>
+            <th scope="col">Sender Name</th>
+            <th scope="col">Date And Time (IST)</th>
+            <th scope="col">Remarks</th>
+            <th scope="col">Credit (INR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let d of data | sort:search">
+          <tr>
+            <td>{{d.transactionid}}</td>
+            <td>{{d.customerid}}</td>
+            <td>{{d.senderName}}</td>
+            <td>{{d.date}}</td>
+            <td>{{d.remarks}}</td>
+            <td>{{d.debit}}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+        
+      </table>
+</div>

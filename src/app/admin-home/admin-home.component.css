@@ -1,0 +1,27 @@
+.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    /* height: 1000px; */
+    background-image: url("../../assets/manage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* margin-bottom: 100px; */
+    height: 650px; 
+    position: relative;
+    
+  
+  }
+  h2{
+    text-align:center;
+    margin-top: 5px;
+  }
+  p{
+    text-align: justify;
+    font-family: "Lato", sans-serif;
+  }
+  /* .container{
+    margin-left: 300px; 
+    padding: 1px 16px;
+    
+  } */

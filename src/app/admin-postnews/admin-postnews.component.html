@@ -1,0 +1,44 @@
+<div class="content">
+    <div class="formmodal" >
+    <form  #form="ngForm" (ngSubmit)="onSubmit(form)" class="offset-6 col-md-8 mt-5">
+        <div class="form-row">
+          <div class="col-md-8">
+            <label for="news"><b>News Headline:</b></label><br>
+            <input type="text" class="form-control"  name="newshead" id="form-textbox" #newshead="ngModel" ngModel required>
+            <div style="color: brown;" *ngIf="newshead.touched && newshead.value.length<2 ">enter a proper news headline</div>
+          </div>
+        </div>
+        <div class="form-row mt-4">
+            <div class="col-md-8">
+                <label for="phone"><b>Details:</b></label><br> 
+                <textarea id="newsdetails" class="form-control" name="newsdetails" rows="4" cols="90" #newsdetails="ngModel" ngModel required></textarea>
+                <div style="color: brown;" *ngIf="newsdetails.touched && newsdetails.value.length<2">enter details of news</div>
+            </div>
+        </div>
+        <div class="form-row mt-5 mb-5">
+            <div class="col-md-8">
+              <!-- <button class="btn btn-info" type="button" ><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <button type="submit" name="submit" class="btn btn-secondary" [disabled]="form.invalid" data-toggle="modal" data-target="#modalSubscriptionForm" > Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="reset" name="reset"  class="btn btn-default ml-3"><i class="fa fa-undo" aria-hidden="true"></i> Reset </button>
+            </div>
+        </div>  
+    </form>
+</div>
+</div>
+
+
+<div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">{{message}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-success" data-dismiss="modal" data-target="#form">Post Again</button>
+      </div>
+    </div>
+  </div>
+</div>
